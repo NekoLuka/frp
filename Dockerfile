@@ -4,4 +4,5 @@ WORKDIR /frp
 
 COPY ./* ./
 
-CMD chmod +x install.sh && ./install.sh && [[ -n "${RUN_FRPS}" ]] && /frp/frp/frps -c "${FRP_CONFIG_FILE}" || /frp/frp/frpc -c "${FRP_CONFIG_FILE}"
+CMD chmod +x install.sh && ./install.sh && \
+    [[ -n "${RUN_FRPS}" ]] && /frp/frp_${FRP_VERSION}_linux_amd64/frps -c "${FRP_CONFIG_FILE}" || /frp/frp_${FRP_VERSION}_linux_amd64/frpc -c "${FRP_CONFIG_FILE}"

@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  frp:
+    image: frp
+    volumes:
+      - ./frp_default.ini:/frp.ini
+    environment:
+      - RUN_FRPS=true
+      - FRP_CONFIG_FILE=/frp.ini
+      - FRP_VERSION=0.51.3
